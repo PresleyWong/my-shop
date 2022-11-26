@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import Loader from "../components/Loader";
 import { useGetProductDetailQuery } from "../redux/api/productApi";
 import { useDispatch } from "react-redux";
@@ -22,8 +22,20 @@ const ProductDetail = () => {
         <div className="container mt-5 py-4 px-xl-5">
           <nav aria-label="breadcrumb" className="bg-custom-light rounded mb-4">
             <ol className="breadcrumb p-3">
-              <li className="breadcrumb-item">All Prodcuts</li>
-              <li className="breadcrumb-item active" aria-current="page">
+              <li className="breadcrumb-item">
+                <Link
+                  className="text-decoration-none link-secondary"
+                  to="/products"
+                  replace
+                >
+                  ALL PRODUCTS
+                </Link>
+              </li>
+
+              <li
+                className="breadcrumb-item active capitalize"
+                aria-current="page"
+              >
                 {data.title}
               </li>
             </ol>
